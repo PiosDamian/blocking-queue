@@ -1,5 +1,5 @@
 {
-  "name": "blocking-queue",
+  "name": "rxjs-blocking-queue",
   "version": "1.0.0",
   "description": "Queue that emit newly added element when is not blocked",
   "main": "build/index.js",
