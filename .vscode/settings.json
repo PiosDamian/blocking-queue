@@ -1,7 +1,10 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#1C0F93",
-        "titleBar.activeBackground": "#2715CE",
-        "titleBar.activeForeground": "#FAF9FE"
-    }
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#1C0F93",
+    "titleBar.activeBackground": "#2715CE",
+    "titleBar.activeForeground": "#FAF9FE"
+  },
+  "jest.autoEnable": false,
+  "jest.enableCodeLens": true,
+  "jest.debugCodeLens.showWhenTestStateIn": ["fail", "unknown", "pass", "skip"]
 }
