@@ -1,0 +1,23 @@
+{
+  "name": "blocking-queue",
+  "version": "1.0.0",
+  "description": "Queue that emit newly added element when is not blocked",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "queue"
+  ],
+  "author": "Damian Pioś",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.5.0"
+  },
+  "dependencies": {
+    "@types/node": "^14.0.26",
+    "rxjs": "^6.6.0"
+  }
+}
