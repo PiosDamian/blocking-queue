@@ -1,5 +1,5 @@
 {
-  "name": "blocking-queue",
+  "name": "@dpios/blocking-queue",
   "version": "1.0.0",
   "description": "Queue that emit newly added element when is not blocked",
   "main": "build/index.js",
@@ -13,6 +13,10 @@
   ],
   "author": "Damian Pioś",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/PiosDamian/blocking-queue.git"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.7",
     "eslint": "^7.5.0",
@@ -23,5 +27,9 @@
   },
   "dependencies": {
     "rxjs": "^6.6.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/PiosDamian/blocking-queue/issues"
+  },
+  "homepage": "https://github.com/PiosDamian/blocking-queue#readme"
 }

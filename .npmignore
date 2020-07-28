@@ -1,4 +1,7 @@
 tsconfig.json
+tsconfig.build.json
+.gitignore
+jest.config.js
 src
 test
 node_modules
