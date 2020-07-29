@@ -1,7 +1,7 @@
 {
   "name": "rxjs-blocking-queue",
-  "version": "1.0.0",
-  "description": "Queue that emit newly added element when is not blocked",
+  "version": "1.0.1",
+  "description": "Long lived FIFO queue that emit newly added element if isn't blocked",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {

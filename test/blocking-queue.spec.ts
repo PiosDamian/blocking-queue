@@ -17,7 +17,7 @@ describe('BlockingQueue', () => {
 
     it('should create instance of BlockingQueue', () => {
       expect(blockingQueue).toBeTruthy();
-      expect(blockingQueue.waitingElements).toBeDefined();
+      expect(blockingQueue.size).toBeDefined();
     });
 
     it('should emit no values', done => {
@@ -32,7 +32,7 @@ describe('BlockingQueue', () => {
     it('should emit no values', done => {
       blockingQueue.element.subscribe(val => callSpy(val));
 
-      blockingQueue.addElement(testValue);
+      blockingQueue.push(testValue);
 
       setTimeout(() => {
         expect(callSpy).toHaveBeenCalledWith(testValue);
@@ -50,7 +50,7 @@ describe('BlockingQueue', () => {
 
     it('should create instance of BlockingQueue', () => {
       expect(blockingQueue).toBeTruthy();
-      expect(blockingQueue.waitingElements).toBeGreaterThan(0);
+      expect(blockingQueue.size).toBeGreaterThan(0);
     });
 
     it('should emit one value and wait', done => {
@@ -88,9 +88,9 @@ describe('BlockingQueue', () => {
       blockingQueue.element
         .pipe(
           tap(() => {
-            if (!blockingQueue.waitingElements && !addedElement) {
+            if (!blockingQueue.size && !addedElement) {
               addedElement = true;
-              blockingQueue.addElement(testArray[3]);
+              blockingQueue.push(testArray[3]);
             }
           })
         )

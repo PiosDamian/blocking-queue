@@ -2,4 +2,4 @@
 
 Emits first value and wait for signal to emit another.
 
-In any time it is possible do add element on the end of queue.
+In any time it is possible do add element to the end of queue.

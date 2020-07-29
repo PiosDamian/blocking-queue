@@ -1,9 +1,9 @@
-import { Observable, ReplaySubject } from 'rxjs';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 export class BlockingQueue<T> {
   private readonly elements: T[];
-  private readonly current$: ReplaySubject<T> = new ReplaySubject(1);
+  private readonly current$: Subject<T> = new ReplaySubject(1);
   private blocked = false;
 
   constructor(elements?: T[]) {
@@ -16,7 +16,7 @@ export class BlockingQueue<T> {
     return this.current$.asObservable().pipe(tap(() => (this.blocked = true)));
   }
 
-  get waitingElements() {
+  get size() {
     return this.elements.length;
   }
 
@@ -25,7 +25,7 @@ export class BlockingQueue<T> {
     this.emitNextElement();
   }
 
-  addElement(element: T) {
+  push(element: T) {
     this.elements.push(element);
     if (!this.blocked) {
       this.emitNextElement();
@@ -33,7 +33,7 @@ export class BlockingQueue<T> {
   }
 
   private emitNextElement() {
-    if (this.waitingElements) {
+    if (this.size) {
       this.blocked = true;
       this.current$.next(this.elements.shift());
     }
